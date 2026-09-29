@@ -9,15 +9,15 @@ pipeline{
         )
     }
 
-    environment(
+    environment{
         IMAGE_NAME="jenkins-demo-app"
-    )
+    }
     
-    stages(
+    stages{
         stage("Checkout"){
             steps{
                 echo "Checking out Source Code from Git Repo"
-                Checkout scm
+                checkout scm
             }
         }
         stage("Check Docker"){
@@ -56,5 +56,5 @@ pipeline{
                 '''
             }
         }
-    )
+    }
 }
